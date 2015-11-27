@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
+	<title>IndexHtml</title>
+	<style>
+		@import url(app.css);
+	</style>
+	<script type="text/javascript" src="nav.js"></script>
+	<script type="text/javascript" src="swipe.js"></script>
+</head>
+<body>
+	<div class="main">
+	 	<!-- 导航 -->
+		<div class="head">
+			<div class="nav">
+				<div class="logo">
+					<span class="list">
+						<i></i>
+						<i></i>
+					</span>
+					<img class="buy" src="image_buy.svg"/>
+				</div>
+				<ul>
+					<li style="opacity: .6;">	
+						<a href="">Mac</a>
+					</li>
+					<li>
+						<a href="">iPhone</a>
+					</li>
+					<li>
+						<a href="">iPad</a>
+					</li>
+					<li>
+						<a href="">iWatch</a>
+					</li>
+					<li>
+						<a href="">Music</a>
+					</li>
+					<li>
+						<a href="">技术支持</a>
+					</li>
+					<li></li>
+				</ul>
+			</div>
+		</div>
+		<div class="banner">
+			
+		</div>
+		 
+	</div>
+	
+	<script type="text/javascript">
+		var swipe = new $sw();
+			swipe.init({
+				container:document.querySelector(".banner"),
+				imgs:["1.jpg","2.jpg","3.jpg","4.png"]
+			});
+			swipe.play();
+		 function changePic(index){
+		 	var point = 100/swipe.imgs.length;
+		 	var lis = swipe.container.querySelector(".controls").children;
+		 	 clearInterval(swipe.loopId);
+		 	 [].forEach.call(lis,function(v,i){
+							if(i == index){
+								v.className = "active";
+							}else{
+								v.className ="";
+							}
+			})
+		 	 loop.style.transform="translateX(-"+ (index * point)+ "%)";
+
+		 }
+
+		 
+	</script>
+</body>
+</html>
